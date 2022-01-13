@@ -1,0 +1,10 @@
+*{
+    text-decoration: underline;
+}
+
+main{
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto;
+grid-gap: 1rem;
+}
