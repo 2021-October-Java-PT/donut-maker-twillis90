@@ -1,12 +1,22 @@
 class DonutMaker{
 
-    constructor(donutCount, autoClickPrice, multiplierPrice, autoClickCount, multiplierCount, totalDonutsMade){
+    constructor(donutCount, autoClickCount, multiplierCount, totalDonutsMade){
         this.donutCount = donutCount;
-        this.autoClickPrice = autoClickPrice;
-        this.multiplierPrice = multiplierPrice;
         this.autoClickCount = autoClickCount;
         this.multiplierCount = multiplierCount;
         this.totalDonutsMade = totalDonutsMade;
+    }
+
+    getDonutCount(){
+        return this.donutCount;
+    }
+
+    getAutoCount(){
+        return this.autoClickCount;
+    }
+
+    getMultiCount(){
+        return this.multiplierCount;
     }
 
     donutClick(){
@@ -15,12 +25,29 @@ class DonutMaker{
         this.autoClickFunction
     }
 
+    calculateAutoPrice(){
+        if(this.autoClickCount >= 1){
+        let autoClickPrice = this.getAutoCount() * 10;
+        return autoClickPrice;
+        }
+    }
+
+    calculateMultierPrice(){
+        let multiplierPrice = 150;
+        multiplierPrice = this.multiplierCount * 150;
+        return multiplierPrice;
+    }
+
     buyAutoClick(){
-        if(this.donutCount >= this.autoClickPrice){
-            this.donutCount - this.autoClickPrice;
+        if(this.getDonutCount() >= this.calculateAutoPrice()){
+            
+            this.donutCount - this.calculateAutoPrice;
             this.autoClickCount += 1;
         }
-        this.autoClickPrice += 200;
+        // else {
+        //     alert('You have not made enough donuts yet!');
+        // }
+        return this.donutCount;
     }
 
     buyMultiplier(){
@@ -28,12 +55,15 @@ class DonutMaker{
             
             this.donutCount - this.multiplierPrice;
             this.multiplierCount += 1;
+            this.multiplierPrice += 250;
         }
-        this.multiplierPrice += 250;
+        else {
+            alert('You have not made enough donuts yet!');
+        }
     }
 
     autoClickFunction(){
-        if(this.autoClickCount >= 1){
+        if(this.autoClickCount >= 2){
             setInterval(autoDonut, 1000);
             
             autoDonut();{
