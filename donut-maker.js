@@ -1,9 +1,15 @@
+const donutCntDisplay = document.querySelector('#donutCountDisplay');
+const autoCntDisplay = document.querySelector('#autoCountDisplay');
+const multiCntDisplay = document.querySelector('#multiCountDisplay');
+
 class DonutMaker{
 
+    
+
     constructor(donutCount, autoClickCount, multiplierCount, totalDonutsMade){
-        this.donutCount = donutCount;
-        this.autoClickCount = autoClickCount;
-        this.multiplierCount = multiplierCount;
+        this.donutCount = 0;
+        this.autoClickCount = 1;
+        this.multiplierCount = 1;
         this.totalDonutsMade = totalDonutsMade;
     }
 
@@ -39,15 +45,26 @@ class DonutMaker{
     }
 
     buyAutoClick(){
-        if(this.getDonutCount() >= this.calculateAutoPrice()){
+        if(this.donutCount >= this.calculateAutoPrice()){
             
-            this.donutCount - this.calculateAutoPrice;
+            this.donutCount -= this.calculateAutoPrice;
             this.autoClickCount += 1;
+                if(this.autoClickCount > 0){
+                    setInterval(()=>{
+                        this.donutCount += 1;
+                        // donutCntDisplay.innerHTML =`BlahBlahBlah + ${this.donutCount}`;
+                        console.log(this.getDonutCount());
+        
+                    }, 1000);
+                    
+               
+                }
+        
         }
         // else {
         //     alert('You have not made enough donuts yet!');
         // }
-        return this.donutCount;
+        // return this.donutCount;
     }
 
     buyMultiplier(){
@@ -62,15 +79,22 @@ class DonutMaker{
         }
     }
 
-    autoClickFunction(){
-        if(this.autoClickCount >= 2){
-            setInterval(autoDonut, 1000);
+
+    // autoDonut(){
+    //     this.donutCount += (1*this.autoClickCount);
+    // }
+    // autoClickFunction(){
+    //     if(this.autoClickCount >= 2){
+    //         setInterval(()=>{
+    //             this.donutCount += 1;
+    //             donutCntDisplay.innerHTML = this.donutCount;
+    //             console.log(this.donutCount);
+
+    //         }, 1000);
             
-            autoDonut();{
-                this.donutCount += (1*this.autoClickCount);
-            }
-        }
-    }
+       
+    //     }
+    // }
     
 }
 

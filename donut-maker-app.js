@@ -20,8 +20,11 @@ function makeDonuts(){
   const donutBtn = document.querySelector('#makeDonut');
   const autoBtn = document.querySelector('#autoClicker');
   const multiBtn = document.querySelector('#multiplier');
+  const donutCntDisplay = document.querySelector('#donutCountDisplay');
+  const autoCntDisplay = document.querySelector('#autoCountDisplay');
+  const multiCntDisplay = document.querySelector('#multiCountDisplay');
 
-  const donutMaker = new DonutMaker(1, 1, 1, 1);
+  const donutMaker = new DonutMaker(0, 1, 1, 1);
   console.log('constructor check in')
 
   
@@ -48,23 +51,27 @@ function makeDonuts(){
     donutInfo.appendChild(autoInfo);
     donutInfo.appendChild(multiInfo);
     
-    donutGameDiv.appendChild(donutInfo);
+    // donutGameDiv.appendChild(donutInfo);
 
     donutMaker.donutClick();
-    
-    autoBtn.addEventListener('click', () =>{
-      
-      
-      donutMaker.buyAutoClick();
-      donutMaker.autoClickFunction();
 
-      // autoInfo.appendChild(costTillAuto);
-      // autoInfo.appendChild(autoCountPara);
-      // autoBtn.appendChild(costTillAuto);
-      // autoStatusDiv.appendChild(autoInfo);
+
+    
+    // autoBtn.addEventListener('click', () =>{
       
-      // autoBoxDiv.appendChild(autoCountPara);
-    });
+      
+    //   donutMaker.buyAutoClick();
+    //   // donutMaker.autoClickFunction();
+
+    //   // autoInfo.appendChild(costTillAuto);
+    //   // autoInfo.appendChild(autoCountPara);
+    //   // autoBtn.appendChild(costTillAuto);
+    //   // autoStatusDiv.appendChild(autoInfo);
+      
+    //   // autoBoxDiv.appendChild(autoCountPara);
+    //   // donutCntDisplay.innerText = donutMaker.donutCount;
+
+    // });
     
     console.log('auto click count is ' + donutMaker.autoClickCount);
     console.log( 'donut count is '+ donutMaker.donutCount);
@@ -78,6 +85,26 @@ function makeDonuts(){
       donutMaker.buyMultiplier();
     });
     
+    donutCntDisplay.innerText = donutMaker.donutCount;
+    autoCntDisplay.innerText = donutMaker.autoClickCount -1;
+    multiCntDisplay.innerText = donutMaker.multiplierCount;
   
   });
+
+  autoBtn.addEventListener('click', () =>{
+      
+      
+    donutMaker.buyAutoClick();
+    // donutMaker.autoClickFunction();
+
+    // autoInfo.appendChild(costTillAuto);
+    // autoInfo.appendChild(autoCountPara);
+    // autoBtn.appendChild(costTillAuto);
+    // autoStatusDiv.appendChild(autoInfo);
+    
+    // autoBoxDiv.appendChild(autoCountPara);
+    // donutCntDisplay.innerText = donutMaker.donutCount;
+
+  });
+
 }
