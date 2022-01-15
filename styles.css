@@ -1,5 +1,19 @@
-*{
+html{
     text-decoration: underline;
+    background-color: #77bbfd;
+    text-align: center;
+}
+
+header{
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    text-align: center;
+}
+#donutGif{
+    max-height: 200px;
+    max-width: 200px;
+    align-self: center;
 }
 
 body{
@@ -21,4 +35,27 @@ body{
 
 #multiBtnDisplay, #autoBtnDisplay{
     display: inline;
+}
+
+#autoClicker, #multiplier{
+    height: 60%;
+    width: 80%;
+    background-image: url(images\donut-header.jpg);
+    font-size: larger;
+    font-weight: bold;
+}
+
+#donutDisplay{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 10%;
+}
+
+#makeDonut{
+    height: 80px;
+    width: 250px;
+    background-image: url(images\donut-header.jpg);
+    font-size: larger;
+    font-weight: bolder;
 }
