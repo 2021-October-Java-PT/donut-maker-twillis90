@@ -1,5 +1,4 @@
 html{
-    text-decoration: underline;
     background-color: #77bbfd;
     text-align: center;
 }
@@ -16,6 +15,20 @@ header{
     align-self: center;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    max-width: fit-content;
+    align-self: center;
+}
+
+a:hover{
+    background-color: dimgrey;
+    box-sizing: border-box;
+    border-radius: 2rem;
+}
+
 body{
     margin: 10%;
 }
@@ -25,7 +38,7 @@ body{
     flex-direction: row;
     justify-content: center;
     gap: 4rem;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 #donutDisplay{
@@ -49,7 +62,7 @@ body{
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding: 10%;
+    padding: 5%;
 }
 
 #makeDonut{
