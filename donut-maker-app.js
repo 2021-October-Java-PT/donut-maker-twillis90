@@ -17,6 +17,7 @@ function makeDonuts() {
   const donutBtn = document.querySelector("#makeDonut");
   const autoBtn = document.querySelector("#autoClicker");
   const multiBtn = document.querySelector("#multiplier");
+  const resetBtn = document.querySelector("#reset");
   const donutCntDisplay = document.querySelector("#donutCountDisplay");
   const autoCntDisplay = document.querySelector("#autoCountDisplay");
   const multiCntDisplay = document.querySelector("#multiCountDisplay");
@@ -84,5 +85,9 @@ function makeDonuts() {
     autoCntDisplay.innerText = donutMaker.autoClickCount;
     multiCntDisplay.innerText = donutMaker.multiplierCount;
     multiCostDisplay.innerText = donutMaker.multiplierPrice;
+  });
+
+  resetBtn.addEventListener("click", () => {
+    location.reload();
   });
 }

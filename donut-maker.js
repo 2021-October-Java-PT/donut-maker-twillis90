@@ -24,9 +24,9 @@ class DonutMaker {
     return this.autoClickCount;
   }
 
-  // getMultiCount(){
-  //     return this.multiplierCount;
-  // }
+  getMultiCount(){
+      return this.multiplierCount;
+  }
 
   donutClick() {
     this.donutCount += 1 * this.multiplierCount;

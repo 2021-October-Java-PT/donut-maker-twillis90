@@ -51,8 +51,8 @@ body{
 }
 
 #autoClicker, #multiplier{
-    height: 60%;
-    width: 80%;
+    height: 40%;
+    width: 60%;
     background-image: url(images\donut-header.jpg);
     font-size: larger;
     font-weight: bold;
@@ -72,3 +72,9 @@ body{
     font-size: larger;
     font-weight: bolder;
 }
+
+#clearStatsSpace{
+    display: flex;
+    align-content: center;
+}
+
