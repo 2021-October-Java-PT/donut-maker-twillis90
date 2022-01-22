@@ -38,8 +38,7 @@ class DonutMaker {
   }
 
   getMultierPrice(){
-
-      return multiplierPrice;
+     return multiplierPrice;
   }
 
   buyAutoClick() {

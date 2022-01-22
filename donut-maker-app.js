@@ -11,6 +11,7 @@ renderPage();
 
 function renderPage() {
   makeDonuts();
+  
 }
 
 function makeDonuts() {
@@ -24,7 +25,7 @@ function makeDonuts() {
   const autoCostDisplay = document.querySelector("#autoCost");
   const multiCostDisplay = document.querySelector("#multiCost");
 
-  const donutMaker = new DonutMaker(500, 0, 1, 100, 50);
+  const donutMaker = new DonutMaker(0, 0, 1, 100, 50);
 
   donutBtn.addEventListener("click", () => {
     const donutInfo = document.createElement("section");
